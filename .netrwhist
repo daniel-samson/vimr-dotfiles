@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/danielsamson/Projects/daniel-samson/fluent'
+let g:netrw_dirhist_4='/Users/danielsamson/Projects/daniel-samson'
+let g:netrw_dirhist_3='/Users/danielsamson/Projects/daniel-samson/fluent'
+let g:netrw_dirhist_2='/Users/danielsamson/Projects/daniel-samson'
 let g:netrw_dirhist_1='/Users/danielsamson/Projects/digitonic/sona/projects/sona-portal/vendor/ramsey/collection'

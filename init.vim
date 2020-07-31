@@ -27,9 +27,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-
 " Fast Fuzzy Find
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -71,6 +68,7 @@ set path^=**
 " Displays all files when we press tab
 set wildmenu
 
+let mapleader = "`"
 ""
 " Default File Encoding
  set encoding=UTF-8
@@ -231,11 +229,11 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'javascript': ['tcp://127.0.0.1:2089'],
+    \ 'typescript': ['tcp://127.0.0.1:2089'],
     \ 'sh': ['bash-language-server', 'start'],
     \ }
-
+"
 " note that if you are using Plug mapping you should not use `noremap` mappings.
 nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
@@ -259,15 +257,4 @@ inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-function SetLSPShortcuts()
-  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
-endfunction()
+
