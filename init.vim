@@ -27,6 +27,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+
 " Fast Fuzzy Find
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
