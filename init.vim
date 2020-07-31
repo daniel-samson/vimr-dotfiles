@@ -101,6 +101,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+" Spelling
+set spell spelllang=en_us
+
 " Auto saving
 let g:auto_save = 1
 let g:auto_save_silent = 1
